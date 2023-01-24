@@ -5,7 +5,7 @@
  * print_pointer - Prints the value of a pointer variable
  * @types: List a of arguments
  * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -57,7 +57,7 @@ int print_pointer(va_list types, char buffer[],
  * print_non_printable - Prints ascii codes in hexa of non printable chars
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -97,7 +97,7 @@ int print_non_printable(va_list types, char buffer[],
  * print_reverse - Prints reverse string.
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -140,7 +140,7 @@ int print_reverse(va_list types, char buffer[],
  * print_rot13string - Print a string in rot13.
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
- * @flags: Calculates active flags
+ * @flags:  Calculates active flags
  * @width: get width
  * @precision: Precision specification
  * @size: Size specifier
@@ -153,25 +153,25 @@ int print_rot13string(va_list types, char buffer[],
 	char *str;
 	unsigned int i, j;
 	int count = 0;
-OBOBOB	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-OBOBOB	str = va_arg(types, char *);
+	str = va_arg(types, char *);
 	UNUSED(buffer);
 	UNUSED(flags);
-OBOBOB	UNUSED(width);
+	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
 
-OBOBOB	if (str == NULL)
+	if (str == NULL)
 		str = "(AHYY)";
-OBOBOB	for (i = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; in[j]; j++)
 		{
 			if (in[j] == str[i])
 			{
-OBOBOB				x = out[j];
+				x = out[j];
 				write(1, &x, 1);
 				count++;
 				break;
@@ -186,3 +186,4 @@ int print_rot13string(va_list types, char buffer[],
 	}
 	return (count);
 }
+
